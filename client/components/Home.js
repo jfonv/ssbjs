@@ -6,8 +6,9 @@ import React from 'react';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { fighters: [], fighterR: {}, fighterL: {}, weaponR: {}, weaponL: {} };
+    this.state = { fighters: [], fighterR: {}, fighterL: {}, weaponR: {}, weaponL: {}, value: '' };
     this.populateDropdown = this.populateDropdown.bind(this);
+    this.changeCharacter = this.changeCharacter.bind(this);
   }
 
   componentDidMount() {
@@ -39,17 +40,25 @@ class Home extends React.Component {
   populateDropdown() {
     const url = './fighters/';
     fetch(url)
-    .then(r => r.json())
-    .then(j => {
-      console.log('this is the j', j);
-      this.setState({ fighters: j });
-    });
+    .then((r) =>
+      r.text().then(j => {
+        const resp = JSON.parse(j);
+        this.setState({ fighters: resp.fighters });
+        console.log('this is the state:', this.state.fighters);
+      })
+    );
+  }
     // this.props.update();
+  update() {
+    // joe
   }
 
-  update() {
-    // this.refs.fighterName.value = '';
-    // this.refs.fighterImageUrl.value = '';
+  changeCharacter(event) {
+    // console.log('figher:', this.state.fighters[0]._id);
+    this.setState({ value: event.target.value });
+    const fighter = this.state.fighters.find((f) =>
+      f._id === this.refs.character.values);
+    console.log('figher:', fighter);
   }
 
   render() {
@@ -57,8 +66,12 @@ class Home extends React.Component {
       <div>
         <h1>Go home bro</h1>
         <div>
-          <select className="form-control" ref="type">
-              {this.state.fighters.map((t) => <option key={t._id}>{t.name}</option>)}
+          <select
+            onClick={this.changeCharacter}
+            className="form-control"
+            value={this.state.value} ref="character"
+          >
+            {this.state.fighters.map((t) => <option key={t._id} value={t._id}>{t.name}</option>)}
           </select>
           <button onClick={this.populateDropdown}>GO</button>
         </div>
