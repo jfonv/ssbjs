@@ -19,7 +19,7 @@ class Fighters extends React.Component {
       credentials: 'same-origin',
     }).then((response) => {
       response.text().then(() => {
-        // const section = JSON.parse(responseText);
+        // const fight = JSON.parse(responseText);
         // name = section.quantity;
         // power = section.type; // change value to text
         // price = section.price;

@@ -20,7 +20,6 @@ app.listen(port, () => {
   logger.log('info', '[EXPRESS] - listening port: %d', port);
 });
 
-app.use('/fights', require('./controllers/fights'));
 app.use('/fighters', require('./controllers/fighters'));
 app.use('/weapons', require('./controllers/weapons'));
 

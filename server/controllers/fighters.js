@@ -17,8 +17,8 @@ router.post('/new', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  const fighter = Fighter.find(req.params.id);
-  res.send({ fighter });
+  Fighter.findById(req.params.id)
+    .exec((err, fighter) => res.send({ fighter }));
 });
 
 router.post('/:id/update', (req, res) => {
