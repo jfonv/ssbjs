@@ -1,0 +1,60 @@
+{
+"weapons": [
+{
+"_id": "57743cb665e6866065f757ea",
+"name": "Bob-omb!",
+"image": "http://vignette1.wikia.nocookie.net/ssb/images/8/8d/Bob-OmbWiiU.png/revision/latest/scale-to-width-down/250?cb=20140409201131",
+"__v": 0,
+"createdAt": "2016-06-29T21:25:10.332Z",
+"power": 11
+},
+{
+"_id": "57744151e5894b0d6a421f68",
+"name": "Raygun",
+"image": "http://vignette1.wikia.nocookie.net/ssb/images/6/64/RayGunBrawl.jpg/revision/latest?cb=20080328052134",
+"__v": 0,
+"createdAt": "2016-06-29T21:44:49.007Z",
+"power": 7
+},
+{
+"_id": "57744161e5894b0d6a421f69",
+"name": "Hammer",
+"image": "http://vignette1.wikia.nocookie.net/ssb/images/8/81/Hammer.png/revision/latest?cb=20140325225922",
+"__v": 0,
+"createdAt": "2016-06-29T21:45:05.817Z",
+"power": 13
+},
+{
+"_id": "57744174e5894b0d6a421f6a",
+"name": "Home-Run Bat",
+"image": "http://vignette1.wikia.nocookie.net/ssb/images/0/09/Bat.gif/revision/latest?cb=20080922210542",
+"__v": 0,
+"createdAt": "2016-06-29T21:45:24.250Z",
+"power": 8
+},
+{
+"_id": "57744184e5894b0d6a421f6b",
+"name": "Beam Sword",
+"image": "http://vignette2.wikia.nocookie.net/ssb/images/d/de/Beamsword.png/revision/latest?cb=20140325143329",
+"__v": 0,
+"createdAt": "2016-06-29T21:45:40.044Z",
+"power": 6
+},
+{
+"_id": "57754decb267575d3d7e9a67",
+"name": "234",
+"image": "53",
+"__v": 0,
+"createdAt": "2016-06-30T16:50:52.651Z",
+"power": 235
+},
+{
+"_id": "57754e72b267575d3d7e9a69",
+"name": "Stalker Tools",
+"image": "faceboko",
+"__v": 0,
+"createdAt": "2016-06-30T16:53:06.880Z",
+"power": 5400
+}
+]
+}
