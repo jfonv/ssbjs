@@ -10,18 +10,9 @@ router.get('/', (req, res) => {
   res.send({ });
 });
 
-router.get('/new', (req, res) => {
+router.post('/new', (req, res) => {
   const fight = new Fight();
-  res.send({ fight });
-});
-
-router.get('/:id', (req, res) => {
-  const fight = new Fight();
-  res.send({ fight });
-});
-
-router.post('/:id/update', (req, res) => {
-  const fight = new Fight();
-  // fight.save();
+  fight.newGame(req.fighterR, req.fighterL,
+                req.weaponR, req.weaponL);
   res.send({ fight });
 });

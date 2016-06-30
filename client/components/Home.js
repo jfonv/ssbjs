@@ -6,13 +6,16 @@ import React from 'react';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { fighters: [], fighterR: {}, fighterL: {}, weaponR: {}, weaponL: {}, value: '' };
-    this.populateDropdown = this.populateDropdown.bind(this);
-    this.changeCharacter = this.changeCharacter.bind(this);
+    this.state = { fighters: [], weapons: [], fighterR: {},
+                   fighterL: {}, weaponR: {}, weaponL: {}, value: '' };
+    this.populateFighterDropdown = this.populateFighterDropdown.bind(this);
+    this.populateWeaponDropdown = this.populateWeaponDropdown.bind(this);
+    this.submitCharacterWeapon = this.submitCharacterWeapon.bind(this);
   }
 
   componentDidMount() {
-    this.populateDropdown();
+    this.populateFighterDropdown();
+    this.populateWeaponDropdown();
   }
 
   submitFighter() {
@@ -37,7 +40,7 @@ class Home extends React.Component {
     // });
   }
 
-  populateDropdown() {
+  populateFighterDropdown() {
     const url = './fighters/';
     fetch(url)
     .then((r) =>
@@ -48,33 +51,97 @@ class Home extends React.Component {
       })
     );
   }
+
+  populateWeaponDropdown() {
+    const url = './weapons/';
+    fetch(url)
+    .then((r) =>
+      r.text().then(j => {
+        const resp = JSON.parse(j);
+        this.setState({ weapons: resp.weapons });
+        console.log('this is the state:', this.state.weapons);
+      })
+    );
+  }
     // this.props.update();
   update() {
     // joe
   }
 
-  changeCharacter(event) {
-    // console.log('figher:', this.state.fighters[0]._id);
-    this.setState({ value: event.target.value });
-    const fighter = this.state.fighters.find((f) =>
-      f._id === this.refs.character.values);
-    console.log('figher:', fighter);
+  submitCharacterWeapon() {
+    const fighterL = this.state.fighters.find((f) => {
+      if (f._id === this.refs.fighter1.value) {
+        return f;
+      }
+      return false;
+    });
+    const weaponL = this.state.weapons.find((w) => {
+      if (w._id === this.refs.weapon1.value) {
+        return w;
+      }
+      return false;
+    });
+    const fighterR = this.state.fighters.find((f) => {
+      if (f._id === this.refs.fighter2.value) {
+        return f;
+      }
+      return false;
+    });
+    const weaponR = this.state.weapons.find((w) => {
+      if (w._id === this.refs.weapon2.value) {
+        return w;
+      }
+      return false;
+    });
+    this.setState({ fighterL, fighterR, weaponL, weaponR });
+    console.log(fighterL, fighterR, weaponL, weaponR);
   }
 
   render() {
+    const fighterSelect = { width: '220px' };
     return (
       <div>
         <h1>Go home bro</h1>
-        <div>
-          <select
-            onClick={this.changeCharacter}
-            className="form-control"
-            value={this.state.value} ref="character"
-          >
-            {this.state.fighters.map((t) => <option key={t._id} value={t._id}>{t.name}</option>)}
-          </select>
-          <button onClick={this.populateDropdown}>GO</button>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <span className={fighterSelect}>
+                  <h3>Select Fighter 1</h3>
+                  <select className="form-control" ref="fighter1">
+                    {this.state.fighters.map((t) =>
+                      <option key={t._id} value={t._id}>{t.name}</option>)}
+                  </select>
+                  <select className="form-control" ref="weapon1">
+                    {this.state.weapons.map((t) =>
+                      <option key={t._id} value={t._id}>{t.name}</option>)}
+                  </select>
+                </span>
+              </td>
+              <td>
+                <span className={fighterSelect} />
+              </td>
+              <td>
+                <span className={fighterSelect}>
+                  <h3>Select Fighter 2</h3>
+                  <select className="form-control" ref="fighter2">
+                    {this.state.fighters.map((t) =>
+                      <option key={t._id} value={t._id}>{t.name}</option>)}
+                  </select>
+                  <select className="form-control" ref="weapon2">
+                    {this.state.weapons.map((t) =>
+                      <option key={t._id} value={t._id}>{t.name}</option>)}
+                  </select>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={3}>
+                <button onClick={this.submitCharacterWeapon}>GO</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
