@@ -1,0 +1,81 @@
+{
+"fighters": [
+{
+"_id": "577440eee5894b0d6a421f62",
+"name": "Link",
+"image": "http://www.ssbwiki.com/images/1/1f/Link_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:43:10.183Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "577440f9e5894b0d6a421f63",
+"name": "Samus",
+"image": "http://www.ssbwiki.com/images/f/fb/Samus_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:43:21.143Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "57744101e5894b0d6a421f64",
+"name": "Mewtwo",
+"image": "http://www.ssbwiki.com/images/2/27/Mewtwo_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:43:29.185Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "57744114e5894b0d6a421f65",
+"name": "Mario",
+"image": "http://www.ssbwiki.com/images/6/60/Mario_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:43:48.930Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "5774412de5894b0d6a421f66",
+"name": "Yoshi",
+"image": "http://www.ssbwiki.com/images/0/0a/Yoshi_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:44:13.300Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "57744136e5894b0d6a421f67",
+"name": "Donkey Kong",
+"image": "http://www.ssbwiki.com/images/4/4e/Donkey_Kong_SSBM.jpg",
+"__v": 0,
+"createdAt": "2016-06-29T21:44:22.094Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+},
+{
+"_id": "57754e64b267575d3d7e9a68",
+"name": "Man Chyld",
+"image": "https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/413/chyld-medford.jpg",
+"__v": 0,
+"createdAt": "2016-06-30T16:52:52.983Z",
+"losses": 0,
+"wins": 0,
+"health": 100,
+"power": 10
+}
+]
+}
